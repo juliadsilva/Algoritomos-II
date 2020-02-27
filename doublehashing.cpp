@@ -17,13 +17,13 @@ int h1(int k, int m){
 int h2(int k, int m){
 
     int h2; //retorno da função
-    int a, b; //variaveis auxiliares
+    int a; //variaveis auxiliares
 
     a = m-1;
-    b = k % a;
-    h2 = 1 + b; 
-    
-    return h2;
+    h2 = 1 + (k%a); 
+    if (h2 < 0) 
+        return h2+m;
+    else return h2;
    
 }
 
@@ -33,8 +33,6 @@ int hash1(int k, int m, int i){
     int X; //Variavel auxiliar
     
     X = h1(k,m) + i*h2(k,m);
-    cout << "i" << i << endl;
-    cout << "x" << X << endl;
     posicao = X % m;
    
     return posicao; 
@@ -50,11 +48,12 @@ int main(){
 
     //Lendo valores
     cin >> k >> m;
+
     
     //Chamando a função e mostrando resultados
-    for(i=0;i<m;i++){
-        posicao = hash1(k,m,i);
-        cout << posicao << " ";
+    for(i=0;i<m;i++){     
+        posicao = hash1(k,m,i;
+        cout << posicao << " ";    
     }
     cout << endl;
 
