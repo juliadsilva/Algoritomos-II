@@ -50,7 +50,7 @@ int main(){
     cin >> k >> m;
 
     
-    //Chamando a função e mostrando resultados
+    //Chamando a função e mostrando os resultados
     for(i=0;i<m;i++){     
         posicao = hash1(k,m,i;
         cout << posicao << " ";    
