@@ -73,7 +73,6 @@ int main()
 {
     int m; // tamanho da tabela
     int k; // chave a ser armazenada
-    //int pos; // posicao onde a chave deve ser inserida
     int i; // contador
     dado tabela[100]; // tabela hash
     
