@@ -1,5 +1,4 @@
 #include<iostream>
-#include<iomanip>
 
 using namespace std;
 
@@ -10,27 +9,25 @@ struct dado
 };
 
 // Funcao auxiliar um para inserir a chave key em uma tabela hash de tamanho m
-int h1(int key, int m)
+int h1(int k, int m)
 {
-    int pos = key % m; // posicao a inserir
+    int h1 = k % m; // posicao a inserir
     
-    // Se a posicao for negativa, temos que somar m
-    if(pos < 0)
-        pos += m;
+    if(h1 < 0)
+        h1 = h1 + m;
         
-    return pos;    
+    return h1;    
 }
 
 // Funcao auxiliar dois para inserir a chave key em uma tabela hash de tamanho m
-int h2(int key, int m)
+int h2(int k, int m)
 {
-    int pos = 1+ (key % (m-1)); // posicao a inserir
+    int h2 = 1+ (k % (m-1)); // posicao a inserir
     
-    // Se a posicao for negativa, temos que somar m
-    if(pos < 0)
-        pos += m;
+    if(h2 < 0)
+        h2 = h2+m;
         
-    return pos;    
+    return h2;    
 }
 
 
@@ -39,7 +36,6 @@ int hashp(int k, int i, int m)
 {
     int pos = (h1(k,m) + i*h2(k,m)) % m;
     
-    // Se a posicao for negativa, temos que somar m
     if(pos < 0)
         pos += m;
         
@@ -72,14 +68,14 @@ int hash_insert(dado t[], int m, int k)
 int main()
 {
     int m; // tamanho da tabela
-    int k; // chave a ser armazenada
+    int k; // chave
     int i; // contador
     dado tabela[100]; // tabela hash
     
     // Lendo o tamanho da tabela
     cin >> m;
     
-    // Inicializando a tabela (tabela vazia)
+    // Inicializando a tabela
     for(i=0;i<m;i++)
     {
         tabela[i].status = 0;
