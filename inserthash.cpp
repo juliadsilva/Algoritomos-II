@@ -9,7 +9,7 @@ struct dado
     int status;
 };
 
-// Funcao auxiliar um para inserir a chave key em uma tabela hash de tamanho m
+// Funcao auxiliar um para inserir a chave em uma tabela hash de tamanho m
 int h1(int key, int m)
 {
     int pos = key % m; // posicao a inserir
