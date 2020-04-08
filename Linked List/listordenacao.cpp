@@ -3,11 +3,6 @@
 
 using namespace std;
 
-void moveParaLista3(list<int>& lista3, list<int>& listaSelecionada){
-    lista3.push_back(listaSelecionada.front());
-    listaSelecionada.pop_front();
-}
-
 int main(){
 
 	list<int> lista1; //ponterio para lista um
