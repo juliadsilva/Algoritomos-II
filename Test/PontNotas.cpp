@@ -10,37 +10,30 @@ using namespace std;
 int main(){
 
     char gabarito[10]; //auxiliar de leitura do gabarito da prova
-    string gab[10]; //gabarito da prova
     char respostas[10]; //auziliar de leitura das respostas do aluno
-    string resp[10]; //respostas do aluno
-    string *g; //ponteiro para o gabarito
-    string *r; //ponteiro para a resposta
     int corretas; //contador das respostas corretas
     int i;//contador
-
-    corretas = 0;
-
-    //Atricuindo ponteiros
-    g = &gab[0];
-    r = &resp[0];
-
+    char *pg, *pr; //ponteiros para varreas os vetores
+  
     //Lendo o gabarito
     for(i=0;i<10;i++){
-        cin >> gabarito; 
-        gab[i] = gabarito;
+        cin >> gabarito[i]; 
     }
 
     //Lendo as respostas
     for(i=0;i<10;i++){
-        cin >> respostas; 
-        resp[i] = respostas;
+        cin >> respostas[i];
     }       
       
     //Comparando gabarito e respostas
-    for(i=0;i<10;i++) {
-       if (g[i] == r[i]){
-            corretas ++;
-        }
+    corretas = 0;
+    pg = gabarito;
+    pr = respostas;
+    for(i=0;i<10;i++){
+        if(*pg == *pr)
+            corretas++;
+        pg++;
+        pr++;
     }
 
     //Mostrando a quantida de respostas corretas
