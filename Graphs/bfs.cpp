@@ -10,7 +10,7 @@ struct no
     int peso; //peso da aresta
 };
 
-//Percurso em largada
+//Percurso em largura
 void bfs(list<no>adj[], int nVertices, int s)
 {
     list<int> q; // fila auxiliar
@@ -91,7 +91,7 @@ int main()
         cin >> u >> v >> p;
     }
 
-    //Busca largada
+    //Busca em largura
     bfs(lista,nVertices,s);
 
     //Liberar a memoria usada pela lista
