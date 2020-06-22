@@ -105,10 +105,10 @@ int main()
 {
     list<no> grafo[10]; //lista de adjacencias
     list<no>::iterator it; ///iterador para varrer a lista
-    int u,v; //vertices de origem e destino, respesctivamente
+    int i,j; //vertices de origem e destino, respesctivamente
     int orientado; //um se for orientado, zero caso contrario    
     int nVertices; //numero de vertices do grafo
-    int i;
+    int k;
     
     //Lendo o numero de vertices do grafo
     cin >> nVertices;
@@ -117,19 +117,19 @@ int main()
     orientado = 1;
   
     ///Lendo informacoes das arestas e inserindo no grafo
-    cin >> u >> v;
-    while(u!=-1 && v!=-1){
-        cria_arestra(grafo,u,v,orientado);
-        cin >> u >> v;
+    cin >> i >> j;
+    while(i!=-1 && j!=-1){
+        cria_arestra(grafo,i,j,orientado);
+        cin >> i >> j;
     }
 
     //Cálculo do Caminho de Custo Mínimo
     dfs(grafo,nVertices);
 
     //Liberar a memoria usada pela lista
-    for(i=0;i<nVertices;i++){
-        while(grafo[i].size()!=0)
-            grafo[i].pop_front();
+    for(k=0;k<nVertices;k++){
+        while(grafo[k].size()!=0)
+            grafo[k].pop_front();
     }
 
     return 0;
