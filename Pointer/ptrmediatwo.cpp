@@ -8,7 +8,7 @@ int main(){
     int v[100]; //vetor
     int *p; //ponteiro
     int i; //contador
-    int pp; //par e positivo
+    double media;
 
     cin >> N;
 
@@ -17,14 +17,15 @@ int main(){
     for(i=0;i<N;i++){
         cin >> v[i];   
     }
-
+    
     for(i=0;i<N;i++){
-        if((*p%2 == 0) && (*p > 0))
-          pp++;  
-        p++
+        media = media + *p;
+        p++;
     }
 
-    cout << pp << endl;
+    cout<<fixed;
+    cout.precision(2);
+    cout << media/N << endl;
        
     return 0;
 }
